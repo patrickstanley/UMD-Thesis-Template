@@ -1,0 +1,125 @@
+% June 2015 (TOC contents linked in blue in pdf file)
+%This template was prepared by Dorothea F. Brosius of the
+%Institute for Electronics and Applied Physics, University of Maryland, College Park, MD
+%The template was last updated in June 2015
+%Thesis Main Page used with thesis.sty based on the
+%University of Maryland Electronic Thesis and Dissertation (ETD) Style Guide (2014)
+
+%The YourInformation file was created by Freja Nordsiek, 2014.
+%Code for linking the TOC titles to the text in the pdf file was created by Freja Nordsiek, 2014.
+
+%Code clean-up and addition of glossaries by Patrick Stanley, 2017.
+%Assumed printing to pdf and extra sections not needed (such as preface and forward)
+
+\documentclass[12pt]{thesis}
+
+%some packages may not be needed depending on your use
+\usepackage{titlesec}
+   \titleformat{\chapter}
+      {\normalfont\large}{Chapter \thechapter:}{1em}{}
+\usepackage{lipsum} %Remove before final draft, used to generate filler text
+\usepackage{graphicx}
+  \graphicspath{ {images/} } %defining where images go here so I don't have to every time
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage{tabls}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{supertabular}
+%\usepackage{subeqn} %removed to fix error with glossaries package
+\usepackage{subfigure}
+\usepackage{microtype}
+\usepackage[bookmarks, colorlinks=true, plainpages=false, pdfpagelabels, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref} %creates hyperlinks to various sections in pdf
+\usepackage[toc, nonumberlist]{glossaries} %needs to be after hyperref
+
+\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
+\renewcommand{\baselinestretch}{2}
+\setlength{\textwidth}{5.9in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-.50in}
+\setlength{\oddsidemargin}{.55in}
+\setlength{\parindent}{.4in}
+\pagestyle{empty}
+
+
+\setacronymstyle{long-short} %first use of acronym gives full name
+\glsdisablehyper %turns off hyperlinking
+\loadglsentries{definitions} %defines file with all entries
+\renewcommand{\glossarysection}[2][]{} %Hides glossary title so it can be named manually
+\makeglossaries
+
+
+\begin{document}
+\hypersetup{pageanchor=false} %Fixes hyperref error with unnumbered title pages
+\include{Abstract} %(must be first, required, non-numbered)
+\include{Titlepage} %(must follow Abstract, required, non-numbered)
+\include{Copyright} %(highly recommended, non-numbered)
+\hypersetup{pageanchor=true}
+
+%Pages from this point start at lower-case Roman number ii)
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\addcontentsline{toc}{chapter}{Dedication}
+\include{Dedication} %(if present, lower-case Roman)
+
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\include{Acknowledgements} %(if present, lower-case Roman)
+
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
+
+\tableofcontents %(required, lower-case Roman)
+
+\newpage
+\listoftables %(if present, lower-case Roman)
+
+\newpage
+\listoffigures %(if present, lower-case Roman)
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Abbreviations and Symbols} %Manually put in ToC
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
+\hbox{\ }
+
+\begin{center}
+\large{List of Abbreviations and Symbols} %Manually create centered title
+\end{center}
+
+\vspace{3pt}
+
+\printglossary
+
+
+\newpage
+\setlength{\parskip}{0em}
+\renewcommand{\baselinestretch}{2}
+\small\normalsize
+
+%Pages from this point start at Arabic numeral 1
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+
+\appendix
+\titleformat{\chapter}
+      {\normalfont\large}{Appendix \thechapter:}{1em}{}
+\include{AppendixA}
+\include{AppendixB}
+
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
+
+%Assuming you are using BibTeX
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{Bibliography}
+
+\end{document}
