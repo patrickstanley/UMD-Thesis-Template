@@ -19,7 +19,7 @@
       {\normalfont\large}{Chapter \thechapter:}{1em}{}
 \usepackage{lipsum} %Remove before final draft, used to generate filler text
 \usepackage{graphicx}
-  \graphicspath{ {images/} } %defining where images go here so I don't have to every time
+  \graphicspath{ {Images/} } %defining where images go here so I don't have to every time
 \usepackage{cite}
 \usepackage{lscape}
 \usepackage{indentfirst}
@@ -54,9 +54,9 @@
 
 \begin{document}
 \hypersetup{pageanchor=false} %Fixes hyperref error with unnumbered title pages
-\include{Abstract} %(must be first, required, non-numbered)
-\include{Titlepage} %(must follow Abstract, required, non-numbered)
-\include{Copyright} %(highly recommended, non-numbered)
+\include{FrontMatter/Abstract} %(must be first, required, non-numbered)
+\include{FrontMatter/Titlepage} %(must follow Abstract, required, non-numbered)
+\include{FrontMatter/Copyright} %(highly recommended, non-numbered)
 \hypersetup{pageanchor=true}
 
 %Pages from this point start at lower-case Roman number ii)
@@ -70,10 +70,10 @@
 %\include{Foreword} %(if present, lower-case Roman)
 
 \addcontentsline{toc}{chapter}{Dedication}
-\include{Dedication} %(if present, lower-case Roman)
+\include{FrontMatter/Dedication} %(if present, lower-case Roman)
 
 \addcontentsline{toc}{chapter}{Acknowledgements}
-\include{Acknowledgements} %(if present, lower-case Roman)
+\include{FrontMatter/Acknowledgements} %(if present, lower-case Roman)
 
 \renewcommand{\baselinestretch}{1}
 \small\normalsize
@@ -109,15 +109,15 @@
 %Pages from this point start at Arabic numeral 1
 \setcounter{page}{1}
 \pagenumbering{arabic}
-\include{Chapter1}
-\include{Chapter2}
-\include{Chapter3}
+\include{Chapters/Chapter1}
+\include{Chapters/Chapter2}
+\include{Chapters/Chapter3}
 
 \appendix
 \titleformat{\chapter}
       {\normalfont\large}{Appendix \thechapter:}{1em}{}
-\include{AppendixA}
-\include{AppendixB}
+\include{Appendices/AppendixA}
+\include{Appendices/AppendixB}
 
 \renewcommand{\baselinestretch}{1}
 \small\normalsize
