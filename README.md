@@ -53,27 +53,33 @@ Adapt these commands to fit your needs.
         cd ~/Documents/
 
 2.  Next clone the template from GitHub to your computer:
+        
         git clone <https://github.com/patrickstanley/UMD-Thesis-Template.git>
 
     Feel free to rename this folder to something that makes sense to you.
+        
         mv UMD-Thesis-Template NewName
 
 3.  Now you can cd into it:
+        
         cd 'NewName'/
 
 4.  Congrats, your project is now set up.
     It is generally a good idea not to make edits to your master brach (which you are currently in).
     Make a new branch by:
+        
         git checkout -b writing
 
 5.  Now you are free to start making what ever changes you want to the document.
 
 6.  Once you have enough changes that you want to commit and back everything up you will want to add everything to the staging area then commit it.
     Do so with:
+        
         git add .
         git commit -m "Add commit notes here"
 
 7.  At this point, all changes will be committed to the brach "writing" if you want to put everything into the master brach, first switch to the master then merge.
+        
         git checkout master
         git merge writing
 
@@ -94,8 +100,10 @@ Go to the template's [GitHub commits page](https://github.com/patrickstanley/UMD
     - If other commits have happened since, copy the hash for that commit.
         It will be something like 7b5b34595c82848d0b6dd44dd5d7259944383ebe.
 *   Move the master brach back to that commit by running:
+        
         git checkout 7b5b34595c82848d0b6dd44dd5d7259944383ebe
 *   Continue with steps 4 through 6. If you have your edited files somewhere else, feel free to copy them over. Before step 7, update your master brach by running:
+        
         git pull origin master
 
 *   Go ahead and finish out the rest of the earlier instructions by merging your writing branch to the master.
