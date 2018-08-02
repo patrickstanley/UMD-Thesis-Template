@@ -32,7 +32,8 @@
 %\usepackage{subeqn} %removed to fix error with glossaries package
 \usepackage{subfigure}%allows creation of subfigures (i.e.  Fig #a, Fig. #b...)
 \usepackage{microtype}%readablity enhancements
-\usepackage[bookmarks, colorlinks=true, plainpages=false, pdfpagelabels, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref} %creates hyperlinks to various sections in pdf
+\usepackage[bookmarks, bookmarksnumbered, colorlinks=true, plainpages=false, pdfpagelabels, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref}
+\usepackage{bookmark}%manually add missing bookmarks with \pdfbookmark
 \usepackage[toc, nonumberlist]{glossaries} %needs to be after hyperref
 
 \newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
